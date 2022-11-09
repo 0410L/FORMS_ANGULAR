@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <p></p>
   <div class="container">
-    <h4>¿Que vols fer?</h4>
+    <h5>¿Que vols fer?</h5>
+    <p></p>
     <div class="form-check">
-      <input type="checkbox" (click)="acumular(500)" class= form-check-input>
-      <label class="form-check-label">pagina web (500€)</label>
+      <input type="checkbox" (click)="acumular(300)" class= form-check-input>
+      <label class="form-check-label">una pàgina web (500€)</label>
     </div>
     <p></p>
     <div class="form-check">
@@ -24,16 +25,20 @@ import { Component, OnInit } from '@angular/core';
     </div>
     <p></p>
     <p></p>
-    <h5>Preu:<strong>{{numero}}</strong></h5>
+    <h5>Preu: <strong>{{numero}}</strong></h5>
     <p></p>
   </div>
   `
 })
 export class CarritoComponent implements OnInit {
   numero: number = 0;
+
   acumular (valor:number){
     this.numero+=valor;
   }
+
+  isAccepted:string[]=[];
+
 
   constructor() { }
   ngOnInit(): void {
