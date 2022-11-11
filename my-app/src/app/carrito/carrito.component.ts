@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-//services
-interface servei {
-  nombre: string;
-  price: number;
-  id: number;
-}
-
 
 @Component({
   selector: 'app-carrito',
@@ -16,7 +9,6 @@ interface servei {
 })
 
 
-
 //contiguts del carrito
 export class CarritoComponent implements OnInit {
 
@@ -24,31 +16,46 @@ export class CarritoComponent implements OnInit {
   paginaWebDespliega: boolean = false;
   precio: number = 0;
   agregar: number = 0;
+  paginaWeb = 500;
+  Seo = 300;
+  googleAds = 200;
 
 
-  acumular(event: any): void {
-    let optionChecked: boolean = event.currentTarget.checked;
+  /*
+  services: servei []=[
+    {nombre:'paginaWeb', import: 500, id: 1},
+    {nombre:'Seo', import: 300, id: 2},
+    {nombre:'googleAds', import: 200, id: 3},
+  ]
+  */
 
-    for (let service in this.services) {
-      if (optionChecked && event.target.defaultValue === this.services[service].nombre) {
-        this.agregar = this.agregar + this.services[service].price; this.paginaWebDespliega=true;
-      } 
+  acumular(checkBoxChecked: any) {
 
-      else if (optionChecked === false && event.target.defaultValue === this.services[service].nombre) {
-        this.agregar = this.agregar - this.services[service].price; this.paginaWebDespliega=false;
+    if (checkBoxChecked.currentTarget.checked) {
+      if (checkBoxChecked.target.defaultValue === "paginaWeb") {
+        this.agregar = this.paginaWeb; this.paginaWebDespliega=true;
       }
+
+      if (checkBoxChecked.target.defaultValue === "paginaWeb")  this.agregar = this.paginaWeb;
+      else if (checkBoxChecked.target.defaultValue === "Seo") this.agregar = this.Seo;
+      else this.agregar = this.googleAds;
+      
+      this.precio+=this.agregar; 
     }
 
-    this.precio = this.agregar;
-    console.log (this.services)
+    else {
+        if (checkBoxChecked.target.defaultValue === "paginaWeb") {
+          this.agregar = this.paginaWeb; this.paginaWebDespliega=false;
+        }
+        
+        if (checkBoxChecked.target.defaultValue === "paginaWeb") this.agregar = this.paginaWeb;
+        else if (checkBoxChecked.target.defaultValue === "Seo") this.agregar = this.Seo;
+        else this.agregar = this.googleAds;
+        
+        this.precio-=this.agregar;
+    }  
+
   }
-
-
-  services: servei []=[
-    {nombre:'paginaWeb', price: 500, id: 1},
-    {nombre:'seo', price: 300, id: 2},
-    {nombre:'googleAds', price: 200, id: 3},
-  ]
 
   constructor() { }
   ngOnInit(): void {
