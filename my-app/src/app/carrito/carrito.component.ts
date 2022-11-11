@@ -17,7 +17,7 @@ interface servei {
   template: `
   <p></p>
   <h5>¿Que vols fer?</h5>
-  <div class="container-fluid bg-info bg-opacity-25">
+  <div class="container-fluid">
     <p></p>
     <div class="form-check">
       <input type="checkbox" (click)="acumular($event)" value="paginaWeb" class= form-check-input>
@@ -47,6 +47,7 @@ interface servei {
 export class CarritoComponent implements OnInit {
 
 
+  paginaWebDespliega: boolean = false;
   precio: number = 0;
   agregar: number = 0;
 
@@ -55,18 +56,15 @@ export class CarritoComponent implements OnInit {
     let optionChecked: boolean = event.currentTarget.checked;
 
     for (let service in this.services) {
-      if (
-        optionChecked &&
-        event.target.defaultValue === this.services[service].nombre
-      ) {
-        this.agregar = this.agregar + this.services[service].price;
-      } else if (
-        optionChecked === false &&
-        event.target.defaultValue === this.services[service].nombre
-      ) {
+      if (optionChecked && event.target.defaultValue === this.services[service].nombre) {
+        this.agregar = this.agregar + this.services[service].price; this.paginaWebDespliega=true;
+      } 
+
+      else if (optionChecked === false && event.target.defaultValue === this.services[service].nombre) {
         this.agregar = this.agregar - this.services[service].price;
       }
     }
+
     this.precio = this.agregar;
     console.log (this.services)
   }

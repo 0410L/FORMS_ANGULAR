@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { ContadorComponent } from './contador/contador.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FormsModule } from '@angular/forms';
+import { PanellComponent } from './panell/panell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContadorComponent,
-    CarritoComponent
+    CarritoComponent,
+    PanellComponent
   ],
   imports: [
     BrowserModule,
