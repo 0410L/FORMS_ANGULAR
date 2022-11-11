@@ -11,34 +11,8 @@ interface servei {
 @Component({
   selector: 'app-carrito',
   styleUrls: ['./carrito.component.css'],
+  templateUrl: './carrito.component.html',
 
-
-  //contingut del html, titol y selectors de compra
-  template: `
-  <p></p>
-  <h5>¿Que vols fer?</h5>
-  <div class="container-fluid">
-    <p></p>
-    <div class="form-check">
-      <input type="checkbox" (click)="acumular($event)" value="paginaWeb" class= form-check-input>
-      <label class="form-check-label">una pàgina web (500€)</label>
-    </div>
-    <p></p>
-    <div class="form-check">
-      <input type="checkbox" (click)="acumular($event)" value="seo" class= form-check-input>
-      <label class="form-check-label">una consultoria SEO (300€)</label>
-    </div>
-    <p></p>
-    <div class="form-check">
-      <input type="checkbox" (click)="acumular($event)" value="googleAds" class= form-check-input>
-      <label class="form-check-label">una campanya de Google Ads (200€)</label>
-    </div>
-    <p></p>
-    <p></p>
-    <h5>Preu: <strong>{{precio}}</strong></h5>
-    <p></p>
-  </div>
-  `
 })
 
 
@@ -61,7 +35,7 @@ export class CarritoComponent implements OnInit {
       } 
 
       else if (optionChecked === false && event.target.defaultValue === this.services[service].nombre) {
-        this.agregar = this.agregar - this.services[service].price;
+        this.agregar = this.agregar - this.services[service].price; this.paginaWebDespliega=false;
       }
     }
 
