@@ -1,1 +1,36 @@
-<app-carrito></app-carrito>
+<!--<app-carrito></app-carrito>-->
+<p></p>
+
+
+<div class="container">
+<h5>¿Que vols fer?</h5>
+  <p></p>
+  <div class="form-check">
+    <input type="checkbox" (change)="pWebCbox($event)" value="pWeb" class= form-check-input>
+    <label class="form-check-label">una pàgina web (500€)</label>
+        <ng-template [ngIf] = paginaWebDespliega>
+            <app-panell> (incloure)="precioWebTotal($event)"</app-panell>
+        </ng-template>
+  </div>
+
+  <p></p>
+  
+  <div class="form-check">
+    <input type="checkbox" (change)="seoCbox($event)" value="seoW" class= form-check-input>
+    <label class="form-check-label">una consultoria SEO (300€)</label>
+  </div>
+
+  <p></p>
+  
+  <div class="form-check">
+    <input type="checkbox" (change)="gAdsCbox($event)" value="gAds" class= form-check-input>
+    <label class="form-check-label">una campanya de Google Ads (200€)</label>
+  </div>
+
+  <p></p>
+  <p></p>
+
+  <h5>Preu: <strong>{{precioTotal}} Euros</strong></h5>
+  
+  <p></p>
+</div>

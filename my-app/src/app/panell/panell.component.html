@@ -1,23 +1,27 @@
 <!--<p>panell works!</p>-->
 <div class="desplegablePanel m-4 p-4 rounded border border-info">
-    <div class="row">
+    <div class="form-group row">
         <div class="col aling-text">
-            <label for="NumPagLabel" class="col-form-label">Número de páginas</label>
+            <label for="LabelNumPag" class="col-form-label">Número de páginas</label>
         <div>
        
         <div class="col aling-text">
-            <input type="number" id="NumPagLabel" class="form-control">
+            <input [(ngModel)]="paginas" type="number" id="LabelNumPag" class="form-control"
+            (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"
+            (change)="incloureActiu()">
+
         <div>
-        
     </div>
 
-    <div class="row">
+    <div class="form-group row">
         <div class="col aling-text">
-            <label for="NumIdiomLabel" class="col-form-label">Número de idiomas</label>
+            <label for="labelNumIdiom" class="col-form-label">Número de idiomas</label>
         <div>
        
         <div class="col aling-text">
-            <input type="number" id="NumIdiomLabel" class="form-control">
+            <input [(ngModel)]="idiomas" type="number" id="labelNumIdiom" class="form-control"
+            (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"
+            (change)="incloureActiu()">
         <div>
 
     </div>
