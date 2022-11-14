@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { PanellComponent } from './panell/panell.component';
 import { ServicioService } from './servicio.service';
 import { AppRoutingModule } from './app-routing.module';
+import { BenvingudaComponent } from './benvinguda/benvinguda.component';
+import { TornarComponent } from './tornar/tornar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PanellComponent
+    PanellComponent,
+    BenvingudaComponent,
+    TornarComponent
   ],
   imports: [
     BrowserModule,

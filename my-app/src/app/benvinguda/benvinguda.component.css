@@ -1,0 +1,11 @@
+*{
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.inicial{
+    margin-top: -5%;
+}
