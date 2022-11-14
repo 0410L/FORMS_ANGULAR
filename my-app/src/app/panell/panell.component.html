@@ -1,58 +1,60 @@
 <!--<p>panell works!</p>-->
-<div class="desplegablePanel m-4 p-4 rounded border border-info col-5">
+<!--
+<div class="desplegablePanel rounded border border-info col-12">
 
-    <div class="form-group row text-center">
-        <div class="col aling-text">
-            <label for="LabelNumPag" class="col-form-label" [(ngModel)]="paginas" id="LabelNumPag" type="number"(change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)" (change)="incloureActiu()">Número pàgines</label>
+    <div class="form-group row">
+        <div class="col aling-itemms-center">
+            <label for="LabelNumPag" class="col-form-label mt-4" [(ngModel)]="paginas" id="LabelNumPag" type="number"(change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)" (change)="incloureActiu()">Número pàgines</label>
             <button (click)="botonPaginas(+1)" class="btn btn-primary m-2">+</button>
-            <input type="text" class="form-control-sm"  style="text-align: center;" placeholder="{{numeroPaginas}}">
+            <input type="text" class="form-control-sm text-center" placeholder="{{numeroPaginas}}">
             <button (click)="botonPaginas(-1)" class="btn btn-primary m-2">-</button>
         <div>
     </div>
     <br>
 
     <div class="form-group row">
-        <div class="col aling-text">
-            <label for="labelNumIdiom" class="col-form-label" [(ngModel)]="idiomas" id="labelNumIdiom" type="number"(change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)" (change)="incloureActiu()">Número idiomes</label>
+        <div class="col aling-items-center">
+            <label for="labelNumIdiom" class="col-form-label mb-4" [(ngModel)]="idiomas" id="labelNumIdiom" type="number"(change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)" (change)="incloureActiu()">Número idiomes</label>
             <button (click)="botonIdiomas(+1)" class="btn btn-primary m-2">+</button>
-            <input type="text" class="form-control-sm" style="text-align: center;" placeholder="{{numeroIdiomas}}">
+            <input type="text" class="form-control-sm text-center"  placeholder="{{numeroIdiomas}}">
             <button (click)="botonIdiomas(-1)" class="btn btn-primary m-2">-</button>
         <div>
     </div>
 
 </div>
 
+-->
 
-<!--
+
+
     <div class="desplegablePanel m-4 p-4 rounded border border-info">
     <div class="form-group row">
         <div class="col aling-text">
-            <label for="LabelNumPag" class="col-form-label">Número de páginas</label>
+            <label for="number" class="col-form-label">Número de páginas</label>
         <div>
         <div class="col aling-text">
-            <input [(ngModel)]="paginas" type="number" id="LabelNumPag" class="form"
+            <button (click)="botonSumaPaginas()" class="btn btn-primary m-2">+</button>
+            <input [(ngModel)]="paginas" type="number" value="LabelNumPag" id="LabelNumPag" class="form"
             (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"
             (change)="incloureActiu()">
-
-            <button (click)="botonPaginas(+1)">+</button>
-            <span>{{numero}}</span>
-            <button (click)="botonPaginas(-1)">-</button>
+            <button (click)="botonRestaPaginas()" class="btn btn-primary m-2">-</button>
 
         <div>
     </div>
 
     <div class="form-group row">
         <div class="col aling-text">
-            <label for="labelNumIdiom" class="col-form-label">Número de idiomas</label>
+            <label for="number" class="col-form-label">Número de idiomas</label>
         <div>
         <div class="col aling-text">
-            <input [(ngModel)]="idiomas" type="number" id="labelNumIdiom" class="form"
+            <button (click)="botonSumaIdiomas()" class="btn btn-primary m-2">+</button>
+            <input [(ngModel)]="idiomas" type="number" value="labelNumIdiom" id="labelNumIdiom" class="form"
             (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"
             (change)="incloureActiu()">
+            <button (click)="botonRestaIdiomas()" class="btn btn-primary m-2">-</button>
         <div>
 
     </div>
 
 </div>
 
--->

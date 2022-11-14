@@ -16,11 +16,12 @@ export class HomeComponent {
 
   paginaWebDespliega: boolean = false;
   precio: number = 0;
-  precioTotal: number = 0;
+  precioTotal!: number
   precioWeb: number = 0;
   pWebBool: boolean = false;
   seoBool: boolean = false;
   gAdsBool: boolean = false;
+  modificacionesWeb: number = 0;
 
 
 
@@ -34,7 +35,7 @@ export class HomeComponent {
       contenido.currentTarget.checked ? this.paginaWebDespliega=true : this.paginaWebDespliega=false;
       contenido.currentTarget.checked ? this.pWebBool=true : this.pWebBool=false;
 
-      this.precio = this.ServicioService.calcModWebTotal(this.pWebBool, this.seoBool, this.gAdsBool);
+      this.precio = this.ServicioService.calcModWebTotal(this.pWebBool, this.seoBool, this.gAdsBool );
       this.precioTotal=this.precio+this.precioWeb;
   }
 
@@ -44,7 +45,7 @@ export class HomeComponent {
 
     contenido.currentTarget.checked ? this.seoBool=true : this.seoBool=false;
 
-    this.precio = this.ServicioService.calcModWebTotal(this.pWebBool, this.seoBool, this.gAdsBool);
+    this.precio = this.ServicioService.calcModWebTotal(this.pWebBool, this.seoBool, this.gAdsBool );
     this.precioTotal=this.precio+this.precioWeb;
   }
 
@@ -54,7 +55,7 @@ export class HomeComponent {
 
     contenido.currentTarget.checked ? this.gAdsBool=true : this.gAdsBool=false;
 
-    this.precio = this.ServicioService.calcModWebTotal(this.pWebBool, this.seoBool, this.gAdsBool);
+    this.precio = this.ServicioService.calcModWebTotal(this.pWebBool, this.seoBool, this.gAdsBool );
 
     this.precioTotal=this.precio+this.precioWeb;
   }

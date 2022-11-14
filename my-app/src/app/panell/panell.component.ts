@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { ServicioService } from '../servicio.service';
 
 @Component({
@@ -21,17 +21,26 @@ export class PanellComponent implements OnInit {
   base: number = 0;
   numeroPaginas: number = 0;
   numeroIdiomas: number = 0;
+  numero: number = 0;
 
 
   
-  botonPaginas (valor:number){
-    this.numeroPaginas+=valor;
-    
+  botonSumaPaginas (){
+    this.ServicioService.modificacionesWeb+=30;
   }
 
-  botonIdiomas (valor:number){
-    this.numeroIdiomas+=valor;
+  botonRestaPaginas (){
+    this.ServicioService.modificacionesWeb-=30;
   }
+
+  botonSumaIdiomas (){
+    this.ServicioService.modificacionesWeb+=30;
+  }
+
+  botonRestaIdiomas (){
+    this.ServicioService.modificacionesWeb-=30;
+  }
+
 
 
   constructor(public ServicioService: ServicioService) { }
