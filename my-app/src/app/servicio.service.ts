@@ -28,7 +28,7 @@ export class ServicioService {
     seoW ? agregar += this.preuSeo : agregar +=0;
     gAds ? agregar += this.preuGoogleAds : agregar +=0;
 
-    /*this.modificacionesWebTotal ? agregar = this.modificacionesWeb : agregar;*/
+    //this.modificacionesWebTotal ? agregar = this.modificacionesWeb : agregar;
 
     this.modificacionesWebTotal = agregar;
     /*console.log(this.calcModWebTotal)*/
