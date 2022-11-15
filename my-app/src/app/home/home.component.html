@@ -1,37 +1,37 @@
 <!--<app-carrito></app-carrito>-->
+<div class="background container-fluid d-flex" style="height:100vh; margin: 0; padding: 0; background-image: url(../../../assets/home.jpg);
+background-size:100% 100%; background-repeat: no-repeat; background-position: center center; overflow: auto">
 <p></p>
+  <div class="principal container text-center align-items-center justify-content-center mt-3" style="height:50vh">
+  <h5 class="text-white bg-dark p-1">¿Que vols fer?</h5>
+    <p></p>
+    <div class="form-check-control">
+      <input type="checkbox" (change)="pWebCbox($event)"value="pWeb" class= form-check-input>
+      <label class="form-check-label">&nbsp; una pàgina web (500€)</label>
+          <ng-template [ngIf] = paginaWebDespliega class="justify-content-center">
+              <app-panell> (incloure)="precioWebTotal($event)"</app-panell>
+          </ng-template>
+    </div>
 
+    <p></p>
+    
+    <div class="form-check-control">
+      <input type="checkbox" (change)="seoCbox($event)" value="seoW" class= form-check-input>
+      <label class="form-check-label">&nbsp; una consultoria SEO (300€)</label>
+    </div>
 
-<div class="principal container text-center align-items-center justify-content-center" style="height:50vh">
-<h5 class="text-white bg-dark p-2">¿Que vols fer?</h5>
-  <p></p>
-  <div class="form-check-control">
-    <input type="checkbox" (change)="pWebCbox($event)"value="pWeb" class= form-check-input>
-    <label class="form-check-label">&nbsp; una pàgina web (500€)</label>
-        <ng-template [ngIf] = paginaWebDespliega class="justify-content-center">
-            <app-panell> (incloure)="precioWebTotal($event)"</app-panell>
-        </ng-template>
-  </div>
+    <p></p>
+    
+    <div class="form-check-control">
+      <input type="checkbox" (change)="gAdsCbox($event)" value="gAds" class= form-check-input>
+      <label class="form-check-label">&nbsp; una campanya de Google Ads (200€)</label>
+    </div>
 
-  <p></p>
-  
-  <div class="form-check-control">
-    <input type="checkbox" (change)="seoCbox($event)" value="seoW" class= form-check-input>
-    <label class="form-check-label">&nbsp; una consultoria SEO (300€)</label>
-  </div>
+    <p></p>
+    <p></p>
 
-  <p></p>
-  
-  <div class="form-check-control">
-    <input type="checkbox" (change)="gAdsCbox($event)" value="gAds" class= form-check-input>
-    <label class="form-check-label">&nbsp; una campanya de Google Ads (200€)</label>
-  </div>
-
-  <p></p>
-  <p></p>
-
-  <h5>Preu: <strong>{{this.ServicioService.presupuestoTotal()}} Euros</strong></h5>
-  <br>
-  <br>
-  <br>
-  <app-tornar></app-tornar>
+    <h5>Preu: <strong>{{this.ServicioService.presupuestoTotal()}} Euros</strong></h5>
+    <br>
+    <br>
+    <app-tornar></app-tornar>
+</div>

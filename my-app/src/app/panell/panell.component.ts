@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule, NgModel, Validators } from '@angular/forms';
 import { ServicioService } from '../servicio.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-panell',
@@ -18,16 +19,39 @@ export class PanellComponent implements OnInit {
   modificacionesWeb : number = 0;
 
   
-  base: number = 0;
-  numeroPaginas: number = 0;
-  numeroIdiomas: number = 0;
-  numero: number = 0;
+  baseP: number = 1;
+  baseI: number = 1;
+  numeroP: number = 0;
+  numeroI: number = 0;
 
-
-  
-  botonSumaPaginas (){
+  acumularPaginas (valor:number){
+    this.numeroP+=valor;
     this.ServicioService.modificacionesWeb+=30;
   }
+
+  acumularIdiomas (valor:number){
+    this.numeroI+=valor;
+    this.ServicioService.modificacionesWeb+=30;
+  }
+
+  restarPaginas (valor:number){
+    this.numeroP+=valor;
+    this.ServicioService.modificacionesWeb-=30;
+  }
+
+  restarIdiomas (valor:number){
+    this.numeroI+=valor;
+    this.ServicioService.modificacionesWeb-=30;
+  }
+
+
+
+
+
+  /*
+  botonSumaPaginas (){
+    this.ServicioService.modificacionesWeb+=30;
+    }
 
   botonRestaPaginas (){
     this.ServicioService.modificacionesWeb-=30;
@@ -40,8 +64,7 @@ export class PanellComponent implements OnInit {
   botonRestaIdiomas (){
     this.ServicioService.modificacionesWeb-=30;
   }
-
-
+*/
 
   constructor(public ServicioService: ServicioService) { }
 

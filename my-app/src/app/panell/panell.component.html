@@ -1,60 +1,34 @@
 <!--<p>panell works!</p>-->
-<!--
-<div class="desplegablePanel rounded border border-info col-12">
 
+
+<!--BOTON NUMERO DE PAGINAS-->
+
+    <div class="desplegablePanel pt-1 pb-3 rounded border border-info">
     <div class="form-group row">
-        <div class="col aling-itemms-center">
-            <label for="LabelNumPag" class="col-form-label mt-4" [(ngModel)]="paginas" id="LabelNumPag" type="number"(change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)" (change)="incloureActiu()">Número pàgines</label>
-            <button (click)="botonPaginas(+1)" class="btn btn-primary m-2">+</button>
-            <input type="text" class="form-control-sm text-center" placeholder="{{numeroPaginas}}">
-            <button (click)="botonPaginas(-1)" class="btn btn-primary m-2">-</button>
-        <div>
-    </div>
-    <br>
-
-    <div class="form-group row">
-        <div class="col aling-items-center">
-            <label for="labelNumIdiom" class="col-form-label mb-4" [(ngModel)]="idiomas" id="labelNumIdiom" type="number"(change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)" (change)="incloureActiu()">Número idiomes</label>
-            <button (click)="botonIdiomas(+1)" class="btn btn-primary m-2">+</button>
-            <input type="text" class="form-control-sm text-center"  placeholder="{{numeroIdiomas}}">
-            <button (click)="botonIdiomas(-1)" class="btn btn-primary m-2">-</button>
-        <div>
-    </div>
-
-</div>
-
--->
-
-
-
-    <div class="desplegablePanel m-4 p-4 rounded border border-info">
-    <div class="form-group row">
-        <div class="col aling-text">
+        <div class="col  justify-content-center">
             <label for="number" class="col-form-label">Número de páginas</label>
         <div>
-        <div class="col aling-text">
-            <button (click)="botonSumaPaginas()" class="btn btn-primary m-2">+</button>
-            <input [(ngModel)]="paginas" type="number" value="LabelNumPag" id="LabelNumPag" class="form"
-            (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"
-            (change)="incloureActiu()">
-            <button (click)="botonRestaPaginas()" class="btn btn-primary m-2">-</button>
+        <div class="col-sm justify-content-center">
+            <button (click)="acumularPaginas(baseP)" class="btn btn-primary m-1">+</button>
+            <input [(ngModel)]="paginas" type="number" value="{{numeroP}}" id="LabelNumPag"  class="form text-center" (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"(change)="incloureActiu()">
+            <button (click)="restarPaginas(-baseP)" class="btn btn-primary m-1">-</button>
 
         <div>
     </div>
+
+
+<!--BOTON NUMERO DE IDIOMAS-->
 
     <div class="form-group row">
-        <div class="col aling-text">
+        <div class="col-sm  justify-content-center">
             <label for="number" class="col-form-label">Número de idiomas</label>
         <div>
-        <div class="col aling-text">
-            <button (click)="botonSumaIdiomas()" class="btn btn-primary m-2">+</button>
-            <input [(ngModel)]="idiomas" type="number" value="labelNumIdiom" id="labelNumIdiom" class="form"
-            (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"
-            (change)="incloureActiu()">
-            <button (click)="botonRestaIdiomas()" class="btn btn-primary m-2">-</button>
+        <div class="col justify-content-center">
+            <button (click)="acumularIdiomas(baseI)" class="btn btn-primary m-1">+</button>
+            <input [(ngModel)]="idiomas" type="number" value="{{numeroI}}" id="labelNumIdiom" class="form text-center" (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"(change)="incloureActiu()">
+            <button (click)="restarIdiomas(-baseI)" class="btn btn-primary m-">-</button>
         <div>
-
     </div>
-
+<!--<input type="number" value="{{numero}}">-->
 </div>
 
