@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { PanellComponent } from "./panell/panell.component";
 
 @Injectable()
 
@@ -10,8 +11,9 @@ export class ServicioService {
   modificacionesWebTotal: number = 0;
   preuSeoBuit: number = 0;
   preuGoogleAdsBuit: number = 0;
+  finalpresu: number = 0;
+  PanellComponent: any;
  
-  
 
   calcModWeb(paginas: number, idiomas: number){
     
@@ -25,16 +27,16 @@ export class ServicioService {
   calcModWebTotal(pWeb: boolean, seoW: boolean, gAds:boolean){
 
     let agregar: number = 0;
-    pWeb ? agregar += this.preuPaginaWeb : agregar +=0;
-    seoW ? agregar += this.preuSeo : agregar +=0;
-    gAds ? agregar += this.preuGoogleAds : this.preuGoogleAdsBuit +=0;
+    pWeb ? agregar += this.preuPaginaWeb : this.modificacionesWebTotal =0;
+    seoW ? agregar += this.preuSeo : this.preuSeo +=0;
+    gAds ? agregar += this.preuGoogleAds : this.preuGoogleAds +=0;
 
     //this.modificacionesWebTotal ? agregar = this.modificacionesWeb : agregar;
 
-    this.modificacionesWebTotal = agregar;
+    this.modificacionesWeb = agregar;
     /*this.modificacionesWebTotal = agregar;*/
     /*console.log(this.calcModWebTotal)*/
-    return this.modificacionesWeb;
+    return this.modificacionesWebTotal;
   
   }
 
@@ -48,7 +50,7 @@ export class ServicioService {
   }
 
   demo(){
-    this.modificacionesWebTotal = 0
+    //this.modificacionesWebTotal = this.PanellComponent.numeroP
   }
 
   

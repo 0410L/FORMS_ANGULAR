@@ -13,42 +13,42 @@ import { FormControl } from '@angular/forms';
 export class PanellComponent implements OnInit {
 
   //valors inicials de paginas i idiomas 
-  paginas: number = 0;
-  idiomas : number = 0;
+  paginas: number = 1;
+  idiomas : number = 1;
 
   modificacionesWeb : number = 0;
 
-  valor: number = 0;
+  valor: number = 1;
   base: number = 1;
-  numeroP: number = 0;
-  numeroI: number = 0;
+  numeroP: number = 1;
+  numeroI: number = 1;
 
   acumularPaginas (valor:number){
-    this.numeroP+=valor;
-    if(this.numeroP > 0){
-    this.ServicioService.modificacionesWebTotal+=30;
+    if(this.numeroP >= 1){
+      this.numeroP+=valor;
+      this.ServicioService.modificacionesWebTotal+=30;
     }
   }
 
   acumularIdiomas (valor:number){
-    this.numeroI+=valor;
-    if(this.numeroI > 0){
+    if(this.numeroI >= 1){
+      this.numeroI+=valor;
       this.ServicioService.modificacionesWebTotal+=30;
     }
   }
 
   restarPaginas (valor:number){
-    if(this.numeroP > 0){
-    this.numeroP-=valor;
-    this.ServicioService.modificacionesWebTotal-=30;
+    if(this.numeroP >= 2){
+      this.numeroP-=valor;
+      this.ServicioService.modificacionesWebTotal-=30;
     } 
     //this.ServicioService.modificacionesWebTotal-=30;
   }
 
   restarIdiomas (valor:number){
-    if(this.numeroI > 0){
-    this.numeroI-=valor;
-    this.ServicioService.modificacionesWebTotal-=30;
+    if(this.numeroI >= 2){
+      this.numeroI-=valor;
+      this.ServicioService.modificacionesWebTotal-=30;
     }
   }
 

@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./benvinguda.component.css']
 })
 export class BenvingudaComponent implements OnInit {
+  ServicioService: any;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  
 
   navegar(){
     this.router.navigate(['/home']);
