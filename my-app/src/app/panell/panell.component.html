@@ -9,9 +9,9 @@
             <label for="number" class="col-form-label">Número de páginas</label>
         <div>
         <div class="col-sm justify-content-center">
-            <button (click)="acumularPaginas(baseP)" class="btn btn-primary m-1">+</button>
+            <button (click)="acumularPaginas(base)" class="btn btn-primary m-1">+</button>
             <input [(ngModel)]="paginas" type="number" value="{{numeroP}}" id="LabelNumPag"  class="form text-center" (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"(change)="incloureActiu()">
-            <button (click)="restarPaginas(-baseP)" class="btn btn-primary m-1">-</button>
+            <button (click)="restarPaginas(base)" class="btn btn-primary m-1">-</button>
 
         <div>
     </div>
@@ -24,9 +24,9 @@
             <label for="number" class="col-form-label">Número de idiomas</label>
         <div>
         <div class="col justify-content-center">
-            <button (click)="acumularIdiomas(baseI)" class="btn btn-primary m-1">+</button>
+            <button (click)="acumularIdiomas(base)" class="btn btn-primary m-1">+</button>
             <input [(ngModel)]="idiomas" type="number" value="{{numeroI}}" id="labelNumIdiom" class="form text-center" (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"(change)="incloureActiu()">
-            <button (click)="restarIdiomas(-baseI)" class="btn btn-primary m-">-</button>
+            <button (click)="restarIdiomas(base)" class="btn btn-primary m-">-</button>
         <div>
     </div>
 <!--<input type="number" value="{{numero}}">-->

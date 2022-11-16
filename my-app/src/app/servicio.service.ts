@@ -8,9 +8,10 @@ export class ServicioService {
   preuGoogleAds: number = 200;
   modificacionesWeb: number = 0;
   modificacionesWebTotal: number = 0;
+  preuSeoBuit: number = 0;
+  preuGoogleAdsBuit: number = 0;
  
   
-
 
   calcModWeb(paginas: number, idiomas: number){
     
@@ -26,14 +27,14 @@ export class ServicioService {
     let agregar: number = 0;
     pWeb ? agregar += this.preuPaginaWeb : agregar +=0;
     seoW ? agregar += this.preuSeo : agregar +=0;
-    gAds ? agregar += this.preuGoogleAds : agregar +=0;
+    gAds ? agregar += this.preuGoogleAds : this.preuGoogleAdsBuit +=0;
 
     //this.modificacionesWebTotal ? agregar = this.modificacionesWeb : agregar;
 
-    this.modificacionesWeb = agregar;
+    this.modificacionesWebTotal = agregar;
     /*this.modificacionesWebTotal = agregar;*/
     /*console.log(this.calcModWebTotal)*/
-    return this.modificacionesWebTotal;
+    return this.modificacionesWeb;
   
   }
 
@@ -46,7 +47,9 @@ export class ServicioService {
     return this.modificacionesWeb  + this.modificacionesWebTotal;
   }
 
-
+  demo(){
+    this.modificacionesWebTotal = 0
+  }
 
   
 }
