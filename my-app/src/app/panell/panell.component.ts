@@ -22,6 +22,8 @@ export class PanellComponent implements OnInit {
   base: number = 1;
   numeroP: number = 1;
   numeroI: number = 1;
+  showModal: any;
+  showModal2: any;
 
   acumularPaginas (valor:number){
     if(this.numeroP >= 1){
@@ -51,7 +53,6 @@ export class PanellComponent implements OnInit {
       this.ServicioService.modificacionesWebTotal-=30;
     }
   }
-
 
 
   constructor(public ServicioService: ServicioService) { }

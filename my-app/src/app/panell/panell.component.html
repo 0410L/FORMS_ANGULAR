@@ -13,6 +13,28 @@
             <input [(ngModel)]="paginas" type="number" value="{{numeroP}}" id="LabelNumPag"  class="form text-center" (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"(change)="incloureActiu()">
             <button (click)="restarPaginas(base)" class="btn btn-primary m-1">-</button>
 
+
+            <div class="modal" (click)="showModal=false" tabindex="-1"[ngClass]="{'show':showModal}">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body border border-secondary rounded m-3 border-5">
+                      <p>En aquest component ha d'indicar el nombre de pàgines que tindrà el seu lloc web.</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" (click)="showModal=true" data-toggle="modal" data-target="#myModal">i</button>
+
+    <div>
+</div>
+
+
+
+
+
+
+
+
         <div>
     </div>
 
@@ -26,7 +48,20 @@
         <div class="col justify-content-center">
             <button (click)="acumularIdiomas(base)" class="btn btn-primary m-1">+</button>
             <input [(ngModel)]="idiomas" type="number" value="{{numeroI}}" id="labelNumIdiom" class="form text-center" (change)="this.ServicioService.calcTotalModWeb(paginas, idiomas)"(change)="incloureActiu()">
-            <button (click)="restarIdiomas(base)" class="btn btn-primary m-">-</button>
+            <button (click)="restarIdiomas(base)" class="btn btn-primary m-1">-</button>
+
+            <div class="modal" (click)="showModal2=false" tabindex="-1"[ngClass]="{'show':showModal2}">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body border border-secondary rounded m-3 border-5">
+                      <p>En aquest component ha d'indicar el nombre d'idiomes que tindrà el seu lloc web</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" (click)="showModal2=true" data-toggle="modal" data-target="#myModal">i</button>
+
+
         <div>
     </div>
 <!--<input type="number" value="{{numero}}">-->
