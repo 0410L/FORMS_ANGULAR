@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicioService } from '../servicio.service';
 import { PanellComponent } from '../panell/panell.component';
 import { Router } from '@angular/router';
+import { AgregarComponent } from '../agregar/agregar.component';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { Router } from '@angular/router';
 
 
 export class HomeComponent {
-
+  
+  currentPanel = "entrada";
   paginaWebDespliega: boolean = false;
   precio: number = 0;
   precioTotal!: number
@@ -22,6 +24,7 @@ export class HomeComponent {
   seoBool: boolean = false;
   gAdsBool: boolean = false;
   modificacionesWeb: number = 0;
+  AgregarComponent: any
 
 
 
@@ -68,7 +71,9 @@ export class HomeComponent {
     this.precioTotal = this.precio+this.precioWeb;
   }
 
-
+  /*addPanel(newPanel:string){
+    this.ServicioService.presupuestoTotal(this.modificacionesWeb)
+  }*/
 
   /*
   acumular(checkBoxChecked: any) {

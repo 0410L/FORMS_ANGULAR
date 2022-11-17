@@ -8,6 +8,7 @@ import { ServicioService } from './servicio.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BenvingudaComponent } from './benvinguda/benvinguda.component';
 import { TornarComponent } from './tornar/tornar.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TornarComponent } from './tornar/tornar.component';
     HomeComponent,
     PanellComponent,
     BenvingudaComponent,
-    TornarComponent
+    TornarComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,

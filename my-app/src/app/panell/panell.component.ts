@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
 import { FormsModule, NgModel, Validators } from '@angular/forms';
 import { ServicioService } from '../servicio.service';
 import { FormControl } from '@angular/forms';
@@ -11,6 +11,13 @@ import { FormControl } from '@angular/forms';
 
 })
 export class PanellComponent implements OnInit {
+
+@Input() Panel = "resultat";
+@Output() newEntradaEvent = new EventEmitter<string>();
+
+addNewEntrada(value: string){
+  this.newEntradaEvent.emit(value)
+}
 
   //valors inicials de paginas i idiomas 
   paginas: number = 1;

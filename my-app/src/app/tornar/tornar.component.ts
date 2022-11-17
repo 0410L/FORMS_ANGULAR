@@ -23,5 +23,9 @@ export class TornarComponent implements OnInit {
     window.location.reload();
   }
 
+  guardar(){
+    
+  }
+
 
 }
